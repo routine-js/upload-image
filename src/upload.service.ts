@@ -1,5 +1,9 @@
 const mockUpload = (file: File) =>
-  Promise.resolve({ name: 'xxx.png', url: 'xxx.url' });
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ name: 'xxx.png', url: 'xxx.url' });
+    }, 1000);
+  });
 
 export class UploadService {
   upload(files: File[]) {

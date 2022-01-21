@@ -1,5 +1,4 @@
-import { IMiddleware } from '@lujs/middleware';
-import { MiddlewareRunner } from '.';
+import { IMiddleware, MiddlewareRunner } from '@lujs/middleware';
 
 export interface IPropsUseInputFile {
   accept?: string;
@@ -40,7 +39,7 @@ export class SelectImageService {
             .run(fs)
             .then((res) => {
               unMount();
-              resolve([...fs]);
+              resolve(res);
             })
             .catch((err) => {
               reject(err);

@@ -2,6 +2,9 @@ lockfileVersion: 5.3
 
 specifiers:
   '@ant-design/pro-layout': ^6.5.0
+  '@lujs/middleware': ^0.0.4
+  '@lujs/mvp': ^0.1.0
+  '@lujs/react-mvp-adaptor': ^0.2.0
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@umijs/preset-react': 1.x
@@ -16,6 +19,9 @@ specifiers:
 
 dependencies:
   '@ant-design/pro-layout': 6.32.5_react-dom@17.0.2+react@17.0.2
+  '@lujs/middleware': 0.0.4
+  '@lujs/mvp': 0.1.0
+  '@lujs/react-mvp-adaptor': 0.2.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   umi: 3.5.20
@@ -780,6 +786,32 @@ packages:
       '@types/yargs': 15.0.14
       chalk: 4.1.2
     dev: true
+
+  /@lujs/di/1.0.9:
+    resolution: {integrity: sha512-SuJrYak67FRyxXJiwdOi4NtyGD5bBez8oHKspvScVbjTQMYmNze0UKzm9Mj//1o+ZiebbGThAnqO2XWPgBplaQ==}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
+  /@lujs/middleware/0.0.4:
+    resolution: {integrity: sha512-7KIRpra91iIvZIU08rFmMAscnqmKnycEk2q6alciIXxpAmXBu7hTYSzYYwPSlM0fGjCa+Bom/HZW/vzlXF+H2w==}
+    dev: false
+
+  /@lujs/mvp/0.1.0:
+    resolution: {integrity: sha512-U8OjKNVWWUtmvdgIgLVI2W9Chlu6k2jDPc2RSF03WJyMzwGhjfIw+Tkod1mgsfqVfvjmRWwpA4+eMu2JLSr2/A==}
+    dependencies:
+      '@lujs/di': 1.0.9
+      eventemitter3: 4.0.7
+      immer: 9.0.12
+      reflect-metadata: 0.1.13
+    dev: false
+
+  /@lujs/react-mvp-adaptor/0.2.0:
+    resolution: {integrity: sha512-oh2Zfg8Sr9o2io0fz65ZRFBs7H/3eXbUcyn05b9SnpoGxB9AT7la7UnHsU1bR3WApkveSs8bKvx442lP18UKvg==}
+    dependencies:
+      '@lujs/mvp': 0.1.0
+      react: 17.0.2
+    dev: false
 
   /@qixian.cs/path-to-regexp/6.1.0:
     resolution: {integrity: sha512-2jIiLiVZB1jnY7IIRQKtoV8Gnr7XIhk4mC88ONGunZE3hYt5IHUG4BE/6+JiTBjjEWQLBeWnZB8hGpppkufiVw==}
@@ -3048,6 +3080,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /eventemitter3/4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    dev: false
+
   /events/3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
@@ -3651,6 +3687,10 @@ packages:
   /immer/7.0.15:
     resolution: {integrity: sha512-yM7jo9+hvYgvdCQdqvhCNRRio0SCXc8xDPzA25SvKWa7b1WVPjLwQs1VYU5JPXjcJPTqAa5NP5dqpORGYBQ2AA==}
     dev: true
+
+  /immer/9.0.12:
+    resolution: {integrity: sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==}
+    dev: false
 
   /immutable/3.8.2:
     resolution: {integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=}
@@ -6989,6 +7029,10 @@ packages:
       '@babel/runtime': 7.16.7
     dev: true
 
+  /reflect-metadata/0.1.13:
+    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
+    dev: false
+
   /regenerator-runtime/0.11.1:
     resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
     dev: true
@@ -7968,7 +8012,6 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
-    dev: true
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
