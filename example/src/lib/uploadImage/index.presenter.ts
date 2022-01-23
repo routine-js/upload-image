@@ -11,8 +11,8 @@ import { TestUploadService, AbsUploadService } from './upload.service';
 export class UploadImagePresenter extends Presenter<UploadImageModel> {
   constructor(
     private model: UploadImageModel,
-    private selectImageService: SelectImageService,
-    private uploadService: TestUploadService,
+    @inject(UploadToken) private selectImageService: AbsSelectImageService,
+    private uploadService: AbsUploadService,
   ) {
     super();
   }
@@ -51,30 +51,20 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
     //
   }
 
-  // /**
-  //  * 添加选图之后执行的中间件
-  //  */
-  // useSelectImageMiddleware(middleware: IMiddleware<File[]>) {
-  //   this.selectImageService.useMiddleware(middleware);
-  // }
-
   upload(files: File[]) {
     return this.uploadService.upload(files);
   }
 
   selectAndUpload() {
     this.showLoading();
-    console.log('up');
     return this.selectImage()
-      .then((files) => {
-        console.log(files, 'selsect');
-        return this.upload(files).then((data) => {
-          console.log(data, 'data');
+      .then((files) =>
+        this.upload(files).then((data) => {
           this.model.setState((s) => {
             s.imageList.concat(data);
           });
-        });
-      })
+        }),
+      )
       .finally(() => {
         this.hideLoading();
       });
