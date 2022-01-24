@@ -1,17 +1,27 @@
 import { useEffect, useState } from 'react';
 import { usePresenter } from '@lujs/react-mvp-adaptor';
 import { sizeMiddleware } from '@/lib/selectImage.service';
-import { UploadImagePresenter } from '@/lib/uploadImage/index';
+import {
+  SelectImageServiceBrowserInput,
+  SelectImageServiceToken,
+  UploadImagePresenter,
+  UploadServiceToken,
+} from '@/lib/uploadImage/index';
 import styles from './index.less';
-import { RealUploadService } from '@/lib/upload.service';
-import { JsbrideSelectService } from '@/lib/uploadImage/selectImage.service.test';
+import { RealUploadService } from '@/lib/uploadImage/upload.service';
 
 const Inner = () => {
   const { presenter, state } = usePresenter<UploadImagePresenter>(
     UploadImagePresenter,
     {
       // 注册要使用的类
-      registry: [{ token: UploadServiceToken, useClass: RealUploadService }],
+      registry: [
+        {
+          token: SelectImageServiceToken,
+          useClass: SelectImageServiceBrowserInput,
+        },
+        { token: UploadServiceToken, useClass: RealUploadService },
+      ],
     },
   );
 

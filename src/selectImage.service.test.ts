@@ -1,4 +1,11 @@
-import { AbsSelectImageService, sizeMiddleware } from './selectImage.service';
+import {
+  AbsSelectImageService,
+  SelectImageMiddlewareFactor,
+} from './selectImage.service';
+
+const sizeMiddleware = SelectImageMiddlewareFactor.buildImageSizeCheck({
+  max: 1000,
+});
 
 const jsbride = {
   chooseImage: (option = {}) => Promise.resolve('base64'),

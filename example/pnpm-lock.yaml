@@ -3,8 +3,8 @@ lockfileVersion: 5.3
 specifiers:
   '@ant-design/pro-layout': ^6.5.0
   '@lujs/middleware': ^0.0.4
-  '@lujs/mvp': ^0.1.0
-  '@lujs/react-mvp-adaptor': ^0.2.0
+  '@lujs/mvp': ^0.1.4
+  '@lujs/react-mvp-adaptor': 0.3.0
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@umijs/preset-react': 1.x
@@ -20,8 +20,8 @@ specifiers:
 dependencies:
   '@ant-design/pro-layout': 6.32.5_react-dom@17.0.2+react@17.0.2
   '@lujs/middleware': 0.0.4
-  '@lujs/mvp': 0.1.0
-  '@lujs/react-mvp-adaptor': 0.2.0
+  '@lujs/mvp': 0.1.4
+  '@lujs/react-mvp-adaptor': 0.3.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   umi: 3.5.20
@@ -787,8 +787,8 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@lujs/di/1.0.9:
-    resolution: {integrity: sha512-SuJrYak67FRyxXJiwdOi4NtyGD5bBez8oHKspvScVbjTQMYmNze0UKzm9Mj//1o+ZiebbGThAnqO2XWPgBplaQ==}
+  /@lujs/di/1.1.3:
+    resolution: {integrity: sha512-VzLtX34qM2VaRiQLmI//HYjrghjZi2WegiyhlTxxxG6bd/5CvA8D8q1qOrCotxeqoDhqn/tCrjC0HpIGw3FfRA==}
     dependencies:
       tslib: 2.3.1
     dev: false
@@ -797,19 +797,19 @@ packages:
     resolution: {integrity: sha512-7KIRpra91iIvZIU08rFmMAscnqmKnycEk2q6alciIXxpAmXBu7hTYSzYYwPSlM0fGjCa+Bom/HZW/vzlXF+H2w==}
     dev: false
 
-  /@lujs/mvp/0.1.0:
-    resolution: {integrity: sha512-U8OjKNVWWUtmvdgIgLVI2W9Chlu6k2jDPc2RSF03WJyMzwGhjfIw+Tkod1mgsfqVfvjmRWwpA4+eMu2JLSr2/A==}
+  /@lujs/mvp/0.1.4:
+    resolution: {integrity: sha512-iArlHBWu4aWjUU//ReuLCZBuPQxEarOzLJ0o3D+LEHwdTrvGqwaiAAucSxq/L8b99l7moUxaFaE1vNRYL7JRXA==}
     dependencies:
-      '@lujs/di': 1.0.9
+      '@lujs/di': 1.1.3
       eventemitter3: 4.0.7
-      immer: 9.0.12
+      immer: 9.0.7
       reflect-metadata: 0.1.13
     dev: false
 
-  /@lujs/react-mvp-adaptor/0.2.0:
-    resolution: {integrity: sha512-oh2Zfg8Sr9o2io0fz65ZRFBs7H/3eXbUcyn05b9SnpoGxB9AT7la7UnHsU1bR3WApkveSs8bKvx442lP18UKvg==}
+  /@lujs/react-mvp-adaptor/0.3.0:
+    resolution: {integrity: sha512-/CrhfcJZsGB45bdOPY8Yd+PDTA2K3QsS3M5mt6mt1FhRqJI+9PqfI5OoQ71hGpHW5l50X8YVjdT05YTma90MDQ==}
     dependencies:
-      '@lujs/mvp': 0.1.0
+      '@lujs/mvp': 0.1.4
       react: 17.0.2
     dev: false
 
@@ -3688,8 +3688,8 @@ packages:
     resolution: {integrity: sha512-yM7jo9+hvYgvdCQdqvhCNRRio0SCXc8xDPzA25SvKWa7b1WVPjLwQs1VYU5JPXjcJPTqAa5NP5dqpORGYBQ2AA==}
     dev: true
 
-  /immer/9.0.12:
-    resolution: {integrity: sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==}
+  /immer/9.0.7:
+    resolution: {integrity: sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==}
     dev: false
 
   /immutable/3.8.2:
