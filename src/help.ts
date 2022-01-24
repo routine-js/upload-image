@@ -27,20 +27,25 @@ export function getBase64Ext(base64: string) {
   return ext;
 }
 
-export function filename(ext: string): string {
+/**
+ * 生成YYYY/MM/DD/uuid.png的文件名
+ * @param ext
+ * @returns
+ */
+export function formatFilename(ext: string): string {
   const key = moment().format('YYYY/MM/DD/');
   const hash = uniqueID();
   return `${key + hash}.${ext}`;
 }
 
-export function filenameWithFile(file: File): string {
+export function formatFilenameWithFile(file: File): string {
   const ext = extBySpiltDot(file.name);
-  return filename(ext);
+  return formatFilename(ext);
 }
 
-export function filenameWithImgPath(path: string): string {
+export function formatFilenameWithImgPath(path: string): string {
   const ext = extBySpiltDot(path);
-  return filename(ext);
+  return formatFilename(ext);
 }
 
 /**

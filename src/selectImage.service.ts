@@ -22,62 +22,6 @@ export abstract class AbsSelectImageService {
   }
 }
 
-// const browserInputSelect: ISelect = () => {
-//   let isChoosing = false;
-//   return new Promise((resolve, reject) => {
-//     const $input = document.createElement('input');
-//     $input.setAttribute('id', 'useInputFile');
-//     $input.setAttribute('type', 'file');
-//     $input.style.cssText =
-//       'opacity: 0; position: absolute; top: -100px; left: -100px;';
-
-//     $input.setAttribute('accept', 'image/*');
-
-//     document.body.appendChild($input);
-
-//     const unMount = () => {
-//       console.log('unmount');
-//       // eslint-disable-next-line no-use-before-define
-//       $input.removeEventListener('change', changeHandler);
-//       document.body.removeChild($input);
-//     };
-
-//     const changeHandler = () => {
-//       isChoosing = true;
-
-//       if ($input.files) {
-//         console.log($input.files, '$input.files');
-//         const fs = [...$input.files];
-//         unMount();
-//         resolve(fs);
-//       }
-
-//       // 允许重复选择一个文件
-//       $input.value = '';
-
-//       console.log('changeHandler');
-//     };
-
-//     $input.addEventListener('change', changeHandler);
-
-//     // 取消选择文件
-//     window.addEventListener(
-//       'focus',
-//       () => {
-//         console.log('focus');
-//         setTimeout(() => {
-//           if (!isChoosing && $input) {
-//             unMount();
-//             reject(new Error('onblur'));
-//           }
-//         }, 100);
-//       },
-//       { once: true },
-//     );
-//     $input.click();
-//   });
-// };
-
 /**
  * 选图函数生成器
  */
@@ -162,32 +106,7 @@ const browserInputSelect: ISelect = SelectFnFactor.buildBrowserInputSelect({
   accept: 'image/*',
 });
 
-/**
- * 内置的中间件生成器
- */
-export class SelectImageMiddlewareFactor {
-  /**
-   * 检查文件是否小于最大大小
-   * @param options
-   * @returns
-   */
-  static buildImageSizeCheck(options: { max: number }): IMiddleware<File[]> {
-    return (context, next) => {
-      const allPass = context.every((f) => f.size < options.max);
-      if (allPass) {
-        next();
-      } else {
-        throw Error('请上传大于。。。');
-      }
-    };
-  }
-}
 
-// use age
-export const MiddlewareImageSize: IMiddleware<File[]> =
-  SelectImageMiddlewareFactor.buildImageSizeCheck({
-    max: 1000 * 100,
-  });
 
 /**
  * 浏览器 input 选择服务

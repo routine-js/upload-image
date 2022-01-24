@@ -33,5 +33,6 @@ module.exports = {
     'no-empty-function': 'warn',
     'no-param-reassign': ['error', { props: false }],
     'prefer-destructuring': 'warn',
+    'max-classes-per-file': 'off',
   },
 };

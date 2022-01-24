@@ -468,10 +468,7 @@ describe('', () => {
 
     setTimeout(() => {
       expect(count).toBe(5);
-      console.log(
-        result.current.state.fileList,
-        'result.current.state.fileList.',
-      );
+
       expect(result.current.state.fileList.length).toBe(1);
       expect(result.current.state.fileList[0].file.name).toBe('mock.png');
       expect(result.current.state.fileList[0].url).toBe('xxx.url');
