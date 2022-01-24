@@ -17,21 +17,21 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
     super();
   }
 
-  /**
-   * 切换上传服务
-   * @param s
-   */
-  useUploadService(s: AbsUploadService) {
-    this.uploadService = s;
-  }
+  // /**
+  //  * 切换上传服务
+  //  * @param s
+  //  */
+  // useUploadService(s: AbsUploadService) {
+  //   this.uploadService = s;
+  // }
 
-  /**
-   * 切换选图服务
-   * @param s
-   */
-  useSelectImageService(s: AbsSelectImageService) {
-    this.selectImageService = s;
-  }
+  // /**
+  //  * 切换选图服务
+  //  * @param s
+  //  */
+  // useSelectImageService(s: AbsSelectImageService) {
+  //   this.selectImageService = s;
+  // }
 
   showLoading() {
     this.model.setState((s) => {
@@ -50,7 +50,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
    * @returns
    */
   selectImage(index?: number) {
-    if (index) {
+    if (index !== undefined) {
       if (this.state.fileList[index]) {
         // 选图服务允许返回多个文件
         // 如果指定了下标， 就只选用第一个文件
@@ -71,7 +71,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
         .__selectAndRunMiddleware()
         .then((files) => {
           this.model.setState((s) => {
-            s.fileList.concat(files.map((v) => makeFile(v)));
+            s.fileList = [...s.fileList, ...files.map((v) => makeFile(v))];
           });
         });
     }
@@ -89,6 +89,9 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
     const i =
       typeof index === 'number' ? index : this.state.fileList.length - 1;
     const file = this.state.fileList[i];
+    if (!file) {
+      throw Error(`index: ${index} uploadFile out of index,`);
+    }
     if (file.status !== 'successful') {
       this.showLoading();
       return this.uploadService
@@ -128,9 +131,8 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
   /**
    * 选择图片，并上传最后一张图片
    */
-  selectAndUpload() {
-    this.selectImage().then(() => {
-      this.uploadFile();
-    });
+  async selectAndUpload() {
+    await this.selectImage();
+    await this.uploadFile();
   }
 }
