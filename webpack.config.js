@@ -29,6 +29,7 @@ module.exports = {
   externals: {
     '@lujs/mvp': '@lujs/mvp',
     '@lujs/react-mvp-adaptor': '@lujs/react-mvp-adaptor',
+    dayjs: 'dayjs',
   },
 
   output: {

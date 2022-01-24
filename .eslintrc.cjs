@@ -32,5 +32,6 @@ module.exports = {
     'no-useless-constructor': 'off',
     'no-empty-function': 'warn',
     'no-param-reassign': ['error', { props: false }],
+    'prefer-destructuring': 'warn',
   },
 };

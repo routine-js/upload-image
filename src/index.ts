@@ -10,3 +10,5 @@ export {
   SelectImageMiddlewareFactor,
   SelectFnFactor,
 } from './selectImage.service';
+
+export { IFile } from './index.model';

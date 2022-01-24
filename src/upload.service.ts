@@ -1,5 +1,10 @@
 /* eslint-disable max-classes-per-file */
-type ImageRes = { name: string; url: string; [p: string]: any };
+type ImageRes = {
+  name: string;
+  url: string;
+  thumbUrl: string;
+  [p: string]: any;
+};
 
 export interface UploadFn {
   (file: File): Promise<ImageRes>;
@@ -8,24 +13,25 @@ export interface UploadFn {
 const mockUpload: UploadFn = (file: File) =>
   new Promise<ImageRes>((resolve) => {
     setTimeout(() => {
-      resolve({ name: file.name, url: 'xxx.url' });
+      resolve({ name: file.name, url: 'xxx.url', thumbUrl: 'thumbUrl' });
     }, 1000);
   });
 
 export abstract class AbsUploadService {
-  abstract upload(files: File[]): Promise<ImageRes[]>;
+  abstract upload(files: File): Promise<ImageRes>;
 }
 
 export class TestUploadService implements AbsUploadService {
-  upload(files: File[]) {
+  async upload(file: File) {
     console.warn('这里是测试服务，请实现的上传服务');
-    return Promise.all(files.map((f) => mockUpload(f)));
+    return mockUpload(file);
   }
 }
 
 export class RealUploadService implements AbsUploadService {
-  upload(files: File[]) {
+  async upload(file: File) {
     console.warn('这里是真实服务');
-    return Promise.all(files.map((f) => mockUpload(f)));
+
+    return mockUpload(file);
   }
 }
