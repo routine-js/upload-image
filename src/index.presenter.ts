@@ -1,4 +1,5 @@
 import { inject, injectable, Presenter } from '@lujs/mvp';
+import { IFile } from '.';
 import { makeFile, UploadImageModel } from './index.model';
 import { AbsSelectImageService } from './selectImage.service';
 import { AbsUploadService } from './upload.service';
@@ -134,5 +135,14 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
   async selectAndUpload() {
     await this.selectImage();
     await this.uploadFile();
+  }
+
+  replaceFileAt(index: number, file: IFile) {
+    this.model.setState((s) => {
+      s.fileList[index] = {
+        ...s.fileList[index],
+        ...file,
+      };
+    });
   }
 }
