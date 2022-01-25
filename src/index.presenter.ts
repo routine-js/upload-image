@@ -71,9 +71,12 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
       return this.selectImageService
         .__selectAndRunMiddleware()
         .then((files) => {
+          console.log(files, '==files');
           this.model.setState((s) => {
             s.fileList = [...s.fileList, ...files.map((v) => makeFile(v))];
+            console.log(s.fileList, 's.fileList');
           });
+          console.log(this.model, 'this.model');
         });
     }
 
@@ -104,6 +107,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
             s.fileList[i].thumbUrl = res.thumbUrl;
             s.fileList[i].status = 'successful';
           });
+          console.log(this.model, 'this.model1', res);
         })
         .catch((e) => {
           this.model.setState((s) => {

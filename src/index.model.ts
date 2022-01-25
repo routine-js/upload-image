@@ -20,7 +20,8 @@ interface IViewState {
 export const makeFile = (file: File) => {
   const o: IFile = {
     file,
-    thumbUrl: '',
+    thumbUrl:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC',
     id: uniqueID(),
     url: '',
     name: '',
