@@ -22,7 +22,7 @@ const mockFile = new File(['123'], 'mock.png', { type: 'image/png' });
 describe('SelectImageMiddlewareFactor', () => {
   it('check max size, fail', () => {
     const SelectImageMiddlewareCheck: IMiddleware<File[]> =
-      SelectImageMiddlewareFactor.check({ maxSizeMB: 0.000000001 });
+      SelectImageMiddlewareFactor.checkSize({ max: 1 });
 
     const runner = new MiddlewareRunner<File[]>();
 
@@ -33,7 +33,7 @@ describe('SelectImageMiddlewareFactor', () => {
 
   it('check max size ,pass', (done) => {
     const SelectImageMiddlewareCheck: IMiddleware<File[]> =
-      SelectImageMiddlewareFactor.check({ maxSizeMB: 1 });
+      SelectImageMiddlewareFactor.checkSize({ max: 1023 });
 
     const runner = new MiddlewareRunner<File[]>();
 
