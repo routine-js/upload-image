@@ -12,3 +12,5 @@ export {
 
 export { IFile } from './index.model';
 export { SelectImageMiddlewareFactor } from './selectImageMiddleware';
+
+export * as help from './help';

@@ -18,22 +18,6 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
     super();
   }
 
-  // /**
-  //  * 切换上传服务
-  //  * @param s
-  //  */
-  // useUploadService(s: AbsUploadService) {
-  //   this.uploadService = s;
-  // }
-
-  // /**
-  //  * 切换选图服务
-  //  * @param s
-  //  */
-  // useSelectImageService(s: AbsSelectImageService) {
-  //   this.selectImageService = s;
-  // }
-
   showLoading() {
     this.model.setState((s) => {
       s.loading = true;
@@ -71,12 +55,9 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
       return this.selectImageService
         .__selectAndRunMiddleware()
         .then((files) => {
-          console.log(files, '==files');
           this.model.setState((s) => {
             s.fileList = [...s.fileList, ...files.map((v) => makeFile(v))];
-            console.log(s.fileList, 's.fileList');
           });
-          console.log(this.model, 'this.model');
         });
     }
 
@@ -107,7 +88,6 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
             s.fileList[i].thumbUrl = res.thumbUrl;
             s.fileList[i].status = 'successful';
           });
-          console.log(this.model, 'this.model1', res);
         })
         .catch((e) => {
           this.model.setState((s) => {

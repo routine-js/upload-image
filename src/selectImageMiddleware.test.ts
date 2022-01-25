@@ -43,4 +43,15 @@ describe('SelectImageMiddlewareFactor', () => {
       done();
     });
   });
+
+  it('check image ', () => {
+    const SelectImageMiddlewareCheck: IMiddleware<File[]> =
+      SelectImageMiddlewareFactor.checkImageInBrowser({ width: 100 });
+
+    const runner = new MiddlewareRunner<File[]>();
+
+    runner.use(SelectImageMiddlewareCheck);
+
+    expect(() => runner.run([mockFile])).rejects.toThrow();
+  });
 });

@@ -106,8 +106,6 @@ const browserInputSelect: ISelect = SelectFnFactor.buildBrowserInputSelect({
   accept: 'image/*',
 });
 
-
-
 /**
  * 浏览器 input 选择服务
  */
