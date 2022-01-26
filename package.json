@@ -56,8 +56,8 @@
   },
   "peerDependencies": {
     "@lujs/middleware": ">=0.0.4",
-    "@lujs/mvp": ">=0.1.4",
     "@lujs/react-mvp-adaptor": ">=0.3.2",
-    "dayjs": ">=1.10.7"
+    "dayjs": ">=1.10.7",
+    "@lujs/mvp": "^0.2.4"
   }
 }

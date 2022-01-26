@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1643103883329" clover="3.2.0">
-  <project timestamp="1643103883329" name="All files">
+<coverage generated="1643188012660" clover="3.2.0">
+  <project timestamp="1643188012660" name="All files">
     <metrics statements="209" coveredstatements="145" conditionals="51" coveredconditionals="22" methods="68" coveredmethods="47" elements="328" coveredelements="214" complexity="0" loc="209" ncloc="209" packages="1" files="7" classes="7"/>
     <file name="help.ts" path="/Users/lujunsheng/myOwnX/uploadImage/src/help.ts">
       <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>

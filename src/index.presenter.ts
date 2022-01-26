@@ -10,7 +10,7 @@ export const UploadServiceToken = 'UploadServiceToken';
 @injectable()
 export class UploadImagePresenter extends Presenter<UploadImageModel> {
   constructor(
-    private model: UploadImageModel,
+    protected model: UploadImageModel,
     @inject(SelectImageServiceToken)
     private selectImageService: AbsSelectImageService,
     @inject(UploadServiceToken) private uploadService: AbsUploadService,
@@ -34,7 +34,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
    * 调用选图服务 添加或者替换filelist
    * @returns
    */
-  selectImage(index?: number) {
+  select(index?: number) {
     if (index !== undefined) {
       if (this.state.fileList[index]) {
         // 选图服务允许返回多个文件
@@ -70,7 +70,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
    * @param index
    * @returns
    */
-  uploadFile(index?: number) {
+  upload(index?: number) {
     const i =
       typeof index === 'number' ? index : this.state.fileList.length - 1;
     const file = this.state.fileList[i];
@@ -107,7 +107,7 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
    * 移除文件
    * @param index
    */
-  removeFile(index: number) {
+  remove(index: number) {
     this.model.setState((s) => {
       s.fileList.splice(index, 1);
     });
@@ -117,11 +117,11 @@ export class UploadImagePresenter extends Presenter<UploadImageModel> {
    * 选择图片，并上传最后一张图片
    */
   async selectAndUpload() {
-    await this.selectImage();
-    await this.uploadFile();
+    await this.select();
+    await this.upload();
   }
 
-  replaceFileAt(index: number, file: IFile) {
+  replaceAt(index: number, file: IFile) {
     this.model.setState((s) => {
       s.fileList[index] = {
         ...s.fileList[index],

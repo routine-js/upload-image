@@ -155,7 +155,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -183,7 +183,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -191,7 +191,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].file.name).toBe('mock.png');
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
-    presenter.selectImage(0);
+    presenter.select(0);
 
     await waitForNextUpdate();
     expect(count).toBe(3);
@@ -219,7 +219,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -228,7 +228,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     expect(() => {
-      presenter.selectImage(1);
+      presenter.select(1);
     }).toThrowError();
   });
 
@@ -251,7 +251,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -260,7 +260,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     act(() => {
-      presenter.uploadFile();
+      presenter.upload();
     });
     await waitForNextUpdate();
     // showloading changefile hideloading +3 time
@@ -290,7 +290,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -299,7 +299,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     act(() => {
-      expect(() => presenter.uploadFile()).rejects.toThrow();
+      expect(() => presenter.upload()).rejects.toThrow();
     });
     await waitForNextUpdate();
     // showloading changefile hideloading +3 time
@@ -329,7 +329,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -338,7 +338,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     act(() => {
-      presenter.uploadFile(0);
+      presenter.upload(0);
     });
     await waitForNextUpdate();
     // showloading changefile hideloading +3 time
@@ -349,7 +349,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'successful').toBe(true);
 
     // if has upload
-    expect(presenter.uploadFile(0)).resolves.toBeTruthy();
+    expect(presenter.upload(0)).resolves.toBeTruthy();
   });
 
   it('upload index, out of index', async () => {
@@ -371,7 +371,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -380,7 +380,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     act(() => {
-      presenter.uploadFile(0);
+      presenter.upload(0);
     });
     await waitForNextUpdate();
     // showloading changefile hideloading +3 time
@@ -393,9 +393,9 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'successful').toBe(true);
 
     // if has upload
-    expect(presenter.uploadFile(0)).resolves.toBeTruthy();
+    expect(presenter.upload(0)).resolves.toBeTruthy();
 
-    expect(() => presenter.uploadFile(100)).toThrow();
+    expect(() => presenter.upload(100)).toThrow();
   });
 
   it('remove', async () => {
@@ -417,7 +417,7 @@ describe('', () => {
     expect(result.current.state.fileList.length).toBe(0);
     expect(result.current.state.loading).toBeFalsy();
 
-    presenter.selectImage();
+    presenter.select();
 
     await waitForNextUpdate();
     expect(count).toBe(2);
@@ -426,7 +426,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'default').toBe(true);
 
     act(() => {
-      presenter.uploadFile();
+      presenter.upload();
     });
     await waitForNextUpdate();
     // showloading changefile hideloading +3 time
@@ -437,7 +437,7 @@ describe('', () => {
     expect(result.current.state.fileList[0].status === 'successful').toBe(true);
 
     act(() => {
-      presenter.removeFile(0);
+      presenter.remove(0);
     });
     expect(count).toBe(6);
     expect(result.current.state.fileList.length).toBe(0);
