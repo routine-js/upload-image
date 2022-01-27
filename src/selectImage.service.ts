@@ -58,17 +58,14 @@ export class SelectFnFactor {
         document.body.appendChild($input);
 
         const unMount = () => {
-          console.log('unmount');
           // eslint-disable-next-line no-use-before-define
           $input.removeEventListener('change', changeHandler);
           document.body.removeChild($input);
         };
 
         const changeHandler = () => {
-          isChoosing = true;
-
+          isChoosing = false;
           if ($input.files) {
-            console.log($input.files, '$input.files');
             const fs = [...$input.files];
             unMount();
             resolve(fs);
@@ -76,8 +73,6 @@ export class SelectFnFactor {
 
           // 允许重复选择一个文件
           $input.value = '';
-
-          console.log('changeHandler');
         };
 
         $input.addEventListener('change', changeHandler);
@@ -86,17 +81,17 @@ export class SelectFnFactor {
         window.addEventListener(
           'focus',
           () => {
-            console.log('focus');
             setTimeout(() => {
               if (!isChoosing && $input) {
                 unMount();
                 reject(new Error('onblur'));
               }
-            }, 100);
+            }, 300);
           },
           { once: true },
         );
         $input.click();
+        isChoosing = true;
       });
     };
   }

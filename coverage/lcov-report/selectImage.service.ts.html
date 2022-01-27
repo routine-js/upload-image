@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.26% </span>
+                <span class="strong">30.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/46</span>
+                <span class='fraction'>13/43</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.27% </span>
+                <span class="strong">29.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/44</span>
+                <span class='fraction'>12/41</span>
             </div>
         
             
@@ -172,12 +172,7 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,7 +211,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -227,10 +221,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -240,10 +232,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,8 +255,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -330,38 +320,35 @@ export class Sel<span class="cstat-no" title="statement not covered" >ectFnFacto
     const Defaul<span class="cstat-no" title="statement not covered" >tBrowserInputSelect = {</span>
       accept: 'i<span class="cstat-no" title="statement not covered" >mage/*',</span>
       capture: false,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-      multiple: fals<span class="cstat-no" title="statement not covered" >e,</span>
-    };
+      multiple: false,
+    };<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
-    const opt = {<span class="cstat-no" title="statement not covered" ></span>
-      ...DefaultBrowserInputSelect,
-      ...option,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+    const opt = {
+      ...DefaultBrowserInputSelect,<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+      ...option,<span class="cstat-no" title="statement not covered" ></span>
     };<span class="cstat-no" title="statement not covered" ></span>
     return () =&gt; {<span class="cstat-no" title="statement not covered" ></span>
       let isChoosing = f<span class="cstat-no" title="statement not covered" >alse;</span>
-      return new Promise&lt;File[]&gt;((r<span class="cstat-no" title="statement not covered" >esolve, reject) =&gt;</span> {
-        const $input = d<span class="cstat-no" title="statement not covered" >ocument.cre</span>ateElement('input');
-        $input.setAttrib<span class="cstat-no" title="statement not covered" >ute('id', 'us</span>eInputFile');
-        $input.setAttribute('type', 'file');
+      return new Promise<span class="cstat-no" title="statement not covered" >&lt;File[]&gt;((res</span>olve, reject) =&gt; {
+        const $input = document.createElement('input');
+        $input.setAttribute('id', 'useInputFile');
+        $input.setAt<span class="cstat-no" title="statement not covered" >tribute('type', 'fi</span>le');
         $input.style.cssText =
-          'opacity: <span class="cstat-no" title="statement not covered" >0; position: absolu</span>te; top: -100px; left: -100px;';
-<span class="cstat-no" title="statement not covered" ></span>
-        $input.setAttribute('accept', opt.accept);
-<span class="cstat-no" title="statement not covered" ></span>
-        document.body.appendChild($input);
+          'opaci<span class="cstat-no" title="statement not covered" >ty: 0; position: absolute; top: -100px; left: -100</span>px;';
+&nbsp;
+        $input.s<span class="cstat-no" title="statement not covered" >etAttribute('accept', opt.accept)<span class="fstat-no" title="function not covered" >;</span></span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-        const unMoun<span class="cstat-no" title="statement not covered" >t = () =&gt; {</span>
-          console.lo<span class="cstat-no" title="statement not covered" >g('unmount'<span class="fstat-no" title="function not covered" >);</span></span>
-          // eslint-disa<span class="cstat-no" title="statement not covered" >ble-next-line no-use-before-define</span>
-          $input.removeEvent<span class="cstat-no" title="statement not covered" >Listener('c</span>hange', changeHandler);
-          document.body.remo<span class="cstat-no" title="statement not covered" >veChild($input);</span>
-        };
-&nbsp;
+        document.body.ap<span class="cstat-no" title="statement not covered" >pendChild($input);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        const unMount = () =<span class="cstat-no" title="statement not covered" >&gt; {</span>
+          // eslint-disable-next-line no-use-before-define
+          $input.removeEventListener('change', changeHandler);
+          document.body.removeChild($input);
+        };<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
         const changeHandler = () =&gt; {
-          isChoo<span class="cstat-no" title="statement not covered" >sing = true;</span>
-&nbsp;
+          isChoosing = false;
           if ($input.files) {
-            console.log($input.files, '$input.files');
             const fs = [...$input.files];
             unMount();
             resolve(fs);
@@ -369,27 +356,25 @@ export class Sel<span class="cstat-no" title="statement not covered" >ectFnFacto
 &nbsp;
           // 允许重复选择一个文件
           $input.value = '';
+        };
 &nbsp;
-          console.log('changeHandler');
-<span class="fstat-no" title="function not covered" ></span>        };
+<span class="fstat-no" title="function not covered" ></span>        $input.addEventListener('change', changeHandler);
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        $input.addEven<span class="fstat-no" title="function not covered" >tL</span>iste<span class="cstat-no" title="statement not covered" >ner('change', changeH</span>a</span>ndler);
-&nbsp;
-        // 取消选择文件
+<span class="cstat-no" title="statement not covered" >        // 取消选择文件<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
         window.addEventListener(
           'focus',
           () =&gt; {
-            console.log('focus');
             setTimeout(() =&gt; {
               if (!isChoosing &amp;&amp; $input) {
                 unMount();
                 reject(new Error('onblur'));
               }
-            }, 100);
+            }, 300);
           },
           { once: true },
         );
         $input.click();
+        isChoosing = true;
       });
     };
   }
@@ -412,7 +397,7 @@ export class SelectImageServiceBrowserInput extends AbsSelectImageService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 26 2022 17:06:52 GMT+0800 (中国标准时间)
+                at Thu Jan 27 2022 17:27:05 GMT+0800 (中国标准时间)
             </div>
         <script src="prettify.js"></script>
         <script>

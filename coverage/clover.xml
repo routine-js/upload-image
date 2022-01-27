@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1643188012660" clover="3.2.0">
-  <project timestamp="1643188012660" name="All files">
-    <metrics statements="209" coveredstatements="145" conditionals="51" coveredconditionals="22" methods="68" coveredmethods="47" elements="328" coveredelements="214" complexity="0" loc="209" ncloc="209" packages="1" files="7" classes="7"/>
+<coverage generated="1643275625134" clover="3.2.0">
+  <project timestamp="1643275625134" name="All files">
+    <metrics statements="206" coveredstatements="145" conditionals="51" coveredconditionals="22" methods="68" coveredmethods="47" elements="325" coveredelements="214" complexity="0" loc="206" ncloc="206" packages="1" files="7" classes="7"/>
     <file name="help.ts" path="/Users/lujunsheng/myOwnX/uploadImage/src/help.ts">
       <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <line num="2" count="2" type="stmt"/>
@@ -121,7 +121,7 @@
       <line num="17" count="1" type="stmt"/>
     </file>
     <file name="selectImage.service.ts" path="/Users/lujunsheng/myOwnX/uploadImage/src/selectImage.service.ts">
-      <metrics statements="44" coveredstatements="12" conditionals="6" coveredconditionals="0" methods="13" coveredmethods="4"/>
+      <metrics statements="41" coveredstatements="12" conditionals="6" coveredconditionals="0" methods="13" coveredmethods="4"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
@@ -141,31 +141,28 @@
       <line num="37" count="0" type="stmt"/>
       <line num="38" count="0" type="stmt"/>
       <line num="39" count="0" type="stmt"/>
-      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
       <line num="42" count="0" type="stmt"/>
-      <line num="43" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
       <line num="45" count="0" type="stmt"/>
-      <line num="46" count="0" type="stmt"/>
-      <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="47" count="0" type="stmt"/>
       <line num="48" count="0" type="stmt"/>
       <line num="49" count="0" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
-      <line num="51" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
       <line num="54" count="0" type="stmt"/>
-      <line num="55" count="0" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
       <line num="57" count="0" type="stmt"/>
+      <line num="58" count="0" type="cond" truecount="0" falsecount="4"/>
       <line num="59" count="0" type="stmt"/>
       <line num="60" count="0" type="stmt"/>
-      <line num="61" count="0" type="stmt"/>
-      <line num="62" count="0" type="cond" truecount="0" falsecount="4"/>
-      <line num="63" count="0" type="stmt"/>
       <line num="64" count="0" type="stmt"/>
-      <line num="68" count="0" type="stmt"/>
-      <line num="73" count="1" type="stmt"/>
-      <line num="74" count="1" type="stmt"/>
-      <line num="82" count="0" type="stmt"/>
-      <line num="83" count="0" type="stmt"/>
-      <line num="86" count="1" type="stmt"/>
+      <line num="65" count="0" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="79" count="0" type="stmt"/>
+      <line num="80" count="0" type="stmt"/>
+      <line num="83" count="1" type="stmt"/>
     </file>
     <file name="selectImageMiddleware.ts" path="/Users/lujunsheng/myOwnX/uploadImage/src/selectImageMiddleware.ts">
       <metrics statements="56" coveredstatements="26" conditionals="35" coveredconditionals="12" methods="14" coveredmethods="10"/>
