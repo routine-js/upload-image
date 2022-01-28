@@ -1,62 +1,20 @@
-# Middleware Builder  
+Helps you with the process of choosing an image to upload
 
-> To help you create and use middleware  
+[docs](https://lulusir.github.io/mvp/ecosystem/upload-image)
 
-## install
-```
-npm install @lujs/middleware
-```
-## usage
+
 ```typescript
-const m1: IMiddleware<string> = (ctx, next) => {
-  console.log(1);
-  next();
-  console.log(6);
-};
-const m2: IMiddleware<string> = (ctx, next) => {
-  console.log(2);
-  next();
-  console.log(5);
-};
-const m3: IMiddleware<string> = (ctx, next) => {
-  console.log(3);
-  next();
-  console.log(4);
-};
-
-const runner = new MiddlewareRunner<string>();
-runner.use(m1);
-runner.use(m2);
-runner.use(m3);
-
-runner.run('');
-
-// log 1 2 3 4 5 6
-```
-async
-```
-const m1: IMiddleware<string> = async (ctx, next) => {
-  console.log('async', 1);
-  await next();
-  console.log('async', 6);
-};
-const m2: IMiddleware<string> = async (ctx, next) => {
-  console.log('async', 2);
-  await next();
-  console.log('async', 5);
-};
-const m3: IMiddleware<string> = async (ctx, next) => {
-  console.log('async', 3);
-  await next();
-  console.log('async', 4);
-};
-
-const runner = new MiddlewareRunner<string>();
-runner.use(m1);
-runner.use(m2);
-runner.use(m3);
-
-runner.run('');
-
-// log 1 2 3 4 5 6
+  const { presenter, state } = usePresenter<UploadImagePresenter>(
+    UploadImagePresenter,
+    {
+      autoUpdate: true,
+      registry: [
+        { token: UploadServiceToken, useClass: MyUploadService },
+        {
+          token: SelectImageServiceToken,
+          useClass: SelectImageService,
+        },
+      ],
+    },
+  );
 ```
