@@ -38,7 +38,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
     library: {
-      name: 'gif-reader',
+      name: '@lujs/upload-image',
       type: 'umd',
     },
   },
