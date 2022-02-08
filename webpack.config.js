@@ -28,7 +28,7 @@ module.exports = {
   },
   externals: {
     '@clean-js/presenter': '@clean-js/presenter',
-    '@lujs/react-mvp-adaptor': '@lujs/react-mvp-adaptor',
+    '@clean-js/react-presenter': '@clean-js/react-presenter',
     dayjs: 'dayjs',
   },
 
