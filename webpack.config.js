@@ -30,6 +30,7 @@ module.exports = {
     '@clean-js/presenter': '@clean-js/presenter',
     '@clean-js/react-presenter': '@clean-js/react-presenter',
     dayjs: 'dayjs',
+    '@lujs/middleware': '@lujs/middleware',
   },
 
   output: {
