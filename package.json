@@ -56,7 +56,9 @@
   },
   "dependencies": {
     "@lujs/middleware": ">=0.0.4",
-    "dayjs": ">=1.10.7",
+    "dayjs": ">=1.10.7"
+  },
+  "peerDependencies": {
     "@clean-js/presenter": "^0.0.4",
     "@clean-js/react-presenter": "^0.0.4"
   }
